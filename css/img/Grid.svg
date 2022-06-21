@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.0479138mm"
+   height="3.204186mm"
+   viewBox="0 0 3.0479138 3.2041859"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="Grid.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="30.357499"
+     inkscape:cx="9.9645891"
+     inkscape:cy="8.1363752"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
+     inkscape:window-x="1920"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1474">
+      <rect
+         style="fill:#000000;fill-opacity:0.174723;stroke-width:0.573;stroke-linecap:square"
+         id="rect1476"
+         width="3.0479138"
+         height="3.204186"
+         x="-4.5200377"
+         y="14.439228" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1478">
+      <rect
+         style="fill:#000000;fill-opacity:0.174723;stroke-width:0.573;stroke-linecap:square"
+         id="rect1480"
+         width="3.0479138"
+         height="3.204186"
+         x="-4.5200377"
+         y="14.439228" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1482">
+      <rect
+         style="fill:#000000;fill-opacity:0.174723;stroke-width:0.573;stroke-linecap:square"
+         id="rect1484"
+         width="3.0479138"
+         height="3.204186"
+         x="-4.5200377"
+         y="14.439228" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1486">
+      <rect
+         style="fill:#000000;fill-opacity:0.174723;stroke-width:0.573;stroke-linecap:square"
+         id="rect1488"
+         width="3.0479138"
+         height="3.204186"
+         x="-4.5200377"
+         y="14.439228" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(4.5200377,-14.439228)">
+    <path
+       style="font-variation-settings:normal;opacity:0.40610524;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.33, 0.165, 0.0825, 0.165;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       d="M -6.8525524,14.429056 H 21.260197"
+       id="path1210"
+       clip-path="url(#clipPath1486)" />
+    <path
+       style="font-variation-settings:normal;opacity:0.40610524;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.33, 0.165, 0.0825, 0.165;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       d="M -6.6967721,17.638453 H 21.43793"
+       id="path1212"
+       clip-path="url(#clipPath1482)" />
+    <path
+       style="font-variation-settings:normal;opacity:0.40610524;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.66, 0.33, 0.165, 0.33;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       d="m -4.5268356,11.32693 v 9.950173"
+       id="path1214"
+       sodipodi:nodetypes="cc"
+       clip-path="url(#clipPath1478)" />
+    <path
+       style="font-variation-settings:normal;opacity:0.40610524;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.33, 0.165, 0.0825, 0.165;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       d="m -1.4824485,12.113907 v 9.290329"
+       id="path1216"
+       clip-path="url(#clipPath1474)" />
+  </g>
+</svg>

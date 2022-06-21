@@ -1,0 +1,448 @@
+/* 
+ * If you are reading this, then I thank you for your support
+ * of a browser function that everyone should have access to!
+ *
+ * Feel free to poke around and make changes.
+ *
+ * If you see a style you like, try using <CTRL>+C on your keyboard.
+ */
+
+/****
+I may be over-specifying widths/heights in these; maybe being TOO specific;
+****/
+
+/* Wide-screen specifics */
+@media only screen and (min-width:1001px)
+{
+    #Showcase {
+        float:right;
+        clear:right;
+        margin-top:6em;
+        margin-right:10%;
+    }
+}
+
+/* Logo + Logo Text */
+#head{
+    color:#f1f4f5;
+    position:relative;
+    top:0em;
+    font-family:cursive;
+    display:block;
+    font-size:500%;
+    line-height:1.5em;
+    height:1.5em;
+    padding-left:0.5em;
+}
+
+#head::before {
+    float:left;
+    display:block;
+    /*position:relative;*/
+    /*left:-3em;*/
+    width:1.9em;
+    height:1.9em;
+    background-image:url("img/Logo.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    opacity:0.85;
+    content:"";
+    margin-right:0.1em;
+}
+
+#Logo {
+    float:left;
+    min-width:60%;
+    max-width:90%;
+    padding-left:5%;
+}
+
+/* Text under logo */
+#Subtext {
+    font-family:sans-serif;
+    font-style:italic;
+    font-size:90%;
+    font-weight:700;
+    text-shadow:0.05em 0.05em 0.05em #000, -0.05em -0.05em 0.05em #000;
+    display:block;
+    position:relative;
+    clear:both;
+    top:-6em;
+    margin-left:15em;
+    padding:auto;
+    color:#d1dde0;
+    opacity:90%;
+}
+
+/* The whole page header */
+header {
+    display:inline-block;
+    /*min-height:10em;*/
+    width:100%;
+    border-top:0.7em solid #1276B3;
+    border-bottom:0.2em solid;
+    /*Fallback*/
+    background:#90F0a0 50% 0 url("img/Bruce.png") no-repeat;
+    background-color:#90f0a0;
+    background-image:url("img/Grid.svg"),url("img/Contour.svg"),url("img/Bruce.png");
+    background-attachment:scroll,fixed,scroll;
+    background-size:4em,30em,cover;
+    background-repeat:repeat,repeat,repeat-x;
+}
+
+/* The bottom of the page */
+footer {
+    margin-top:0.5em;
+    margin-bottom:0em;
+    padding-bottom:1em;
+    border-bottom:0em;
+    border-top:0.2em solid #1276b3;
+    background-color:#112255;
+    background-image:url("img/Waterfall.png");
+    background-size:cover;
+    background-repeat:repeat-x;
+    color:#26abbb;
+}
+
+footer a {
+    color:#3388cc;
+    font-weight:bold;
+}
+
+/* The "professional showcase" button */
+#Showcase {
+    font-family:Arial, sans-serif;
+    font-size:100%;
+    font-weight:600;
+    text-decoration:none;
+    color:rgba(20,20,100,0.75);
+    border:0.1em solid rgba(0,0,0,0.1);
+    border-radius:0.5em;
+    display:block;
+    padding:0.65em 1.5em 0.5em 0.5em;
+    background-color:rgba(113,162,156,0.8);
+    transition:background-color 0.2s ease-in-out;
+}
+
+#Showcase:hover, #Showcase:focus{
+    background-color:rgba(241,244,245,0.9);
+    transition:background-color 0.2s ease-in-out;
+}
+
+#Showcase:active {
+    background-color:rgba(255,255,255,1.0);
+    transition:background-color 0.2s ease-in-out;
+}
+
+#Showcase:After {
+    float:right;
+    display:block;
+    position:relative;
+    top:-0.1em;
+    left:1em;
+    width:1.5em;
+    height:1.5em;
+    background-image:url("img/Confirm.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    content:"";
+}
+
+/* Document main body */
+body {
+    padding:0;
+    margin:0;
+    background-color:#d3fcff;
+    width:100%;
+}
+
+body a {
+    color:#5f5f9f;
+}
+
+h1 {
+    font-family:sans-serif;
+}
+
+/* Professional Profile */
+#Profile {
+    float:right;
+    width:58%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0.5%;
+    border:0.1em solid #112255;
+    border-radius:0.5em;
+    background-color:#d2ecec;
+}
+
+/* Recent Sidebar */
+#Sidebar {
+    float:left;
+    width:39%;
+    max-width:50em;
+    background-color:#c2dcdc;
+    border:0.1em solid #112255;
+    padding:0.5%;
+    border-radius:0.5em;
+}
+.emph_block {
+    display:block;
+    margin-top:0.5em;
+    /* height:20em; */
+    background-color:#65beac;
+    border-radius:0.5em;
+}
+
+/* In-text flair/spacing */
+.Emph {
+    float:left;
+    font-family:sans-serif;
+    font-weight:bold;
+}
+.EmphDate {
+    float:right;
+    font-family:sans-serif;
+    font-weight:bold;
+    display:block;
+    clear:right;
+}
+.info {
+    display:block;
+    padding-left:1em;
+}
+
+#flextype
+{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+body.Showcase section
+{
+    margin:auto;
+    margin-top:0.25em;
+    width:45%;
+    max-width:80em;
+    justify-content:space-between;
+    display:block;
+    padding:0.2em;
+    background:#d2ecec;
+    border:0.2em solid #65beac;
+    border-radius:0.5em;
+}
+
+body.Showcase h3
+{
+    font-family:sans-serif;
+}
+body.Showcase figure,img,figcaption
+{
+    margin:auto;
+    display:block;
+    width:90%;
+    font-family:sans-serif;
+    font-weight:500;
+}
+
+/* Super-small screen */
+@media only screen and (max-width:440px)
+{
+    #head {
+        float:none;
+        position:static;
+        font-size:350%;
+        line-height:2em;
+    }
+    #head::before
+    {
+        width:0em;
+    }
+    #Showcase
+    {
+        clear:both;
+    }
+    #Subtext
+    {
+        margin:auto;
+        position:static;
+    }
+    /* Sections (mostly uniform, with different backgrounds */
+    #Profile, #Sidebar {
+        float:none;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+        width:95%;
+        padding:0.3em;
+        /*border:0.2em solid #112255;*/
+        border-radius:0.5em;
+        background-color:#d2ecec;
+    }
+    #Sidebar {
+        background-color:#c1ece3;
+    }
+    .emph_block ul {
+        margin-top:3em;
+        line-height:auto;
+    }
+    .emph_block {
+        font-size:90%;
+        max-width:100%;
+        margin-bottom:0.5em;
+        display:block;
+        min-width:10em;
+        /* height:20em; */
+        background-color:#65beac;
+    }
+    
+    /* In-text flair/spacing */
+    .Emph {
+        font-family:sans-serif;
+        font-weight:bold;
+    }
+    .Emph::after{
+        content:":";
+    }
+    .EmphDate {
+        font-family:sans-serif;
+        font-weight:bold;
+        display:block;
+        clear:both;
+    }
+    .info {
+        display:block;
+        padding-left:1em;
+    }
+    h2 {
+        margin-top:0;
+    }
+    body.Showcase section
+    {
+        margin:auto;
+        display:block;
+        width:90%;
+        font-family:sans-serif;
+        font-weight:500;
+    }
+    #flextype
+    {
+        display:block;
+        width:95%;
+    }
+}
+
+/* Small-screen specifics */
+@media only screen and (min-width:441px) and (max-width:1000px)
+{
+    /* Showcase Button */
+    #Showcase {
+        margin:auto;
+        clear:left;
+        float:none;
+        text-align:center;
+        width:90%;
+    }
+    
+    /* Sections (mostly uniform, with different backgrounds */
+    #Profile, #Sidebar {
+        float:none;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+        width:90%;
+        padding:0.5em;
+        border:0.2em solid #112255;
+        border-radius:0.5em;
+        background-color:#d2ecec;
+    }
+    #Sidebar {
+        background-color:#c1ece3;
+    }
+    
+    .emph_block ul {
+        margin-top:3em;
+        line-height:2em;
+    }
+    
+    .emph_block {
+        margin-bottom:0.5em;
+        display:block;
+        min-height:20em;
+        max-width:100%;
+        background-color:#65beac;
+        padding:0.3em;
+        border-radius:0.2em;
+    }
+    
+    /* In-text flair/spacing */
+    .Emph {
+        font-family:sans-serif;
+        font-weight:bold;
+    }
+    .EmphDate{
+        float:right;
+        clear:right;
+        font-family:sans-serif;
+        font-weight:bold;
+    }
+    .info {
+        display:block;
+        padding-left:2em;
+    }
+    h2 {
+        margin-top:0;
+    }
+    body.Showcase section
+    {
+        margin:auto;
+        display:block;
+        width:90%;
+        font-family:sans-serif;
+        font-weight:500;
+    }
+    #flextype
+    {
+        display:block;
+        width:100%
+    }
+}
+
+@media only screen and (max-width:240px)
+{
+
+    #head::before
+    {
+        width:0em;
+    }
+    #Profile, #Sidebar
+    {
+        float:none;
+        width:95%;
+        border:none;
+    }
+        
+    .emph_block {
+        font-size:80%;
+        display:block;
+        min-width:10em;
+        height:20em;
+        max-width:100%;
+        background-color:#65beac;
+    }
+    body.Showcase section
+    {
+        margin:auto;
+        display:block;
+        width:90%;
+        font-family:sans-serif;
+        font-weight:500;
+    }
+    #flextype
+    {
+        display:block;
+        width:95%;
+    }
+}
