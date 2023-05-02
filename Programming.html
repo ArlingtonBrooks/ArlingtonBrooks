@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="General Machining Pre-Apprentice; Master's of Aerospace Engineering with a focus on CFD; IT infrastructure consultation">
+        <meta name="keywords" content="IT, information technology, computers, computational, CFD, fluid dynamics, aerospace, professional">
+        <meta name="author" content="Brooks">
+        <meta name="robots" content="noimageindex,noarchive">
+        <meta name="ai" content="none">
+        <title> TheBrooks | Professional Showcase </title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <header class="Landing">
+        <a href=index.html> <div id="Logo">
+            <h1 id="head">Brooks </h1>
+            <h2 id="Subtext">Beyond conventional thinking</h2>
+        </div> </a>
+        <div>
+            <a id="Showcase" href="index.html"><span>Homepage</span></a>
+            <a id="Showcase" href="Showcase.html"><span>Professional Showcase</span></a>
+        </div>
+    </header>
+    <div class="emph_block" style="background-color:#FFFFFF;padding:2em">
+        <h2>Programming Portfolio</h2>
+        <p> On this page is a link to some of my programming projects.  Prior to 2021, my programming education was limited to what was taught in the accredited engineering programs at the University of Windsor and the University of Toronto.  Starting in 2021, I started taking an interest in computer science and naturally started learning the importance of formatting, structure, and SOLID design principles which were absent from my formal education.  
+        <p> I have taken it upon myself to learn not only the fundamentals, but some of the more challenging details of the various programming languages I use to enable myself to be a well-rounded programmer committed to lifelong learning.  
+    </div>
+    <body class="Showcase">
+        <div id="flextype">
+        <section>
+            <h2> <a href="https://github.com/ArlingtonBrooks/ParseLi">ParseLi</a></h2>
+            <h3> An input file parser for C++ projects </h3>
+            <p> One of the first problems a person must tackle when writing a Computational Fluid Dynamics (CFD) solver from scratch is the problem of getting input from a file into a program.  
+            While many existing CFD solvers contain an input file parser that is sufficient for their needs, the group I was working in had no such luxury and was using an archaic input file system which was written in such a way as to be unparseable.  
+            The ParseLi project was started in 2015 as part of a video game project I was coding at the time, and I found the intuitive input system to be a good fit for the CFD solver code that I was working with at the University of Toronto.  
+            ParseLi is a standalone library and has no affiliation or implied ownership to or by the University of Toronto.
+        </section>
+        <section>
+            <h2> <a href="https://github.com/ArlingtonBrooks/OptimLi">OptimLi</a> </h2>
+            <h3> A multidimensional optimization code </h3>
+            <p> In many engineering applications, it is desireable to define an objective function based on design parameters and minimize that objective function.  
+            This is common, for example, in structural engineering where it is desireable to keep the Von Mises stress in a structural member below the yield stress; it is also desireable in an aeroplane to design a wing which produces the highest lift-to-drag ratio.  
+            <p> The OptimLi project was started in 2017 to review some of the results obtained in my Capstone project.  
+            I later started using it in my research and decided to release the code as open source for easier access.  
+            OptimLi is designed to solve simple optimization problems in a domain where the number of unknown variables is small.  
+            Under the hood, OptimLi is using <a href="https://netlib.org/lapack/index.html">LAPACK</a> and <a href="https://netlib.org/blas/">BLAS</a>, which are not themselves designed for highly scalable systems.  
+            The purpose of OptimLi is to efficiently solve simple optimization problems where a Hessian matrix may be supplied.  
+        </section>
+        </div>
+        <section>
+            <h2> <a href="">Edmonton Euler Moment Problem Solver</a> </h2>
+            <h3> A CFD solver designed for solving one-dimensional polydisperse moment problems </h3>
+            <p> During my M.A.Sc studies, I had to write new code to solve the problems I was investigating in my thesis.  
+            The Edmonton Euler Moment Problem Solver is the name of the research code I wrote for solving the benchmark moment problems of interest.  
+            Since it was developed in accordance with my M.A.Sc research, it is not available publicly.  
+            <p> A couple of features which I have implemented that I found particularly interesting include 
+            <ul>
+            <li> A modified Round-Robin process scheduler for splitting the one-dimensional domain across multiple MPI processes efficiently.  This was necessary since the nature of the problem being solved resulted in a wide variety of computational times for each computational cell; a simple division of work across nodes would not be sufficient to ensure efficient and scalable code.  
+            <li> A generic C++ class which can be used to represent any Stieltjes or Hausdorff size moment model.  In my work, it was used for modelling maximum-entropy and EQMOM-based models, however the code exists for polynomial representations also.  
+            <li> Multiple functions implemented using dynamic programming to speed up results in some cases.  This was implemented via a single-step cache which would hold values for the current simulation iteration and discard them if the cell properties change on the next iteration.  
+            </ul>
+        </section>
+        </div>
+    </body>
+    <footer>
+        <p>Copyright &copy; 2021, Kevin Brooks, All Rights Reserved.</p>
+        <p> Contact: <a href="">noreply</a> </p><br>
+        <p> The CSS stylesheet used by this website is my own creation after completing a course audit of CSS basics on <a href="http://www.edx.org">edx.org</a>.  I encourage you to use elements you like on your own webpages, and as always, give credit where due.</p>
+    </footer>
+</html>
