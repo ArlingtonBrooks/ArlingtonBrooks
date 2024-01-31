@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spray Modelling on Brooks</title>
+    <link>/tags/spray-modelling/</link>
+    <description>Recent content in Spray Modelling on Brooks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Sep 2021 09:00:00 -0700</lastBuildDate>
+    <atom:link href="/tags/spray-modelling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>M.A.Sc Thesis</title>
+      <link>/projects/masc/</link>
+      <pubDate>Sat, 25 Sep 2021 09:00:00 -0700</pubDate>
+      <guid>/projects/masc/</guid>
+      <description>In this thesis, multiple Eulerian-based maximum entropy spray models for higher order velocity space are extended to allow the modelling of sprays with different sized droplets. The moment space considered includes 14 moments for fully three-dimensional physical space. Eulerian-based moment methods are possibly less expensive than Lagrangian-based particle tracking methods and yet can provide statistical information on computational grids of infinitesimal size.</description>
+    </item>
+  </channel>
+</rss>

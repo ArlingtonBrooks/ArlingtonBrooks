@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Brooks</title>
+    <link>/</link>
+    <description>Recent content in Home on Brooks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2023 08:00:00 -0700</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computational Fluid Dynamics Society of Canada Conference (2021)</title>
+      <link>/conferences/cfd2021/</link>
+      <pubDate>Fri, 29 Jul 2022 09:00:00 -0700</pubDate>
+      <guid>/conferences/cfd2021/</guid>
+      <description>In this study, two approximate high-order maximum-entropy-based closures in velocity space are coupled to a 5-moment maximum-entropy closure in droplet size space to model the behaviour of polydisperse polykinetic sprays.  The two approximations of the high-order 14-moment maximum-entropy closures in velocity space (14-moment in three space dimensions, 5-moment in one space dimension) considered here are an interpolative-based approach and a closure based on a bi-Gaussian approximation for the distribution function.</description>
+    </item>
+    <item>
+      <title>Rarefied Gas Dynamics Conference 2022</title>
+      <link>/conferences/rgd2022/</link>
+      <pubDate>Fri, 08 Jul 2022 09:00:00 -0700</pubDate>
+      <guid>/conferences/rgd2022/</guid>
+      <description>In this study, a bi-Gaussian approximation to the number density function (NDF) is used to approximate the both the maximum-entriopy NDF and closing moment fluxes of fourth-order 14-moment maximum-entropy closure associated with fully multi-dimensional kinetic theory.</description>
+    </item>
+    <item>
+      <title>M.A.Sc Thesis</title>
+      <link>/projects/masc/</link>
+      <pubDate>Sat, 25 Sep 2021 09:00:00 -0700</pubDate>
+      <guid>/projects/masc/</guid>
+      <description>In this thesis, multiple Eulerian-based maximum entropy spray models for higher order velocity space are extended to allow the modelling of sprays with different sized droplets. The moment space considered includes 14 moments for fully three-dimensional physical space. Eulerian-based moment methods are possibly less expensive than Lagrangian-based particle tracking methods and yet can provide statistical information on computational grids of infinitesimal size.</description>
+    </item>
+    <item>
+      <title>OptimLi (inactive)</title>
+      <link>/programming/optimli/</link>
+      <pubDate>Thu, 25 May 2017 09:00:00 -0700</pubDate>
+      <guid>/programming/optimli/</guid>
+      <description>OptimLi is an optimization code for solving gradient and hessian-based multidimensional optimization problems. This code was started on a train as a way to kill time and improve C++ programming skills. Unfortunately, due to my lack of formal programming education, the code ended up mixing elements of C and C++ making it difficult to maintain or recommend. In 2024, I pulled this library from my repositories to either be fully rewritten or scrapped altogether.</description>
+    </item>
+    <item>
+      <title>ParseLi</title>
+      <link>/programming/parseli/</link>
+      <pubDate>Thu, 10 Sep 2015 09:00:00 -0700</pubDate>
+      <guid>/programming/parseli/</guid>
+      <description>ParseLi is an input file parser that was created to be as flexible as possible, giving the programmer control to define variables in a file and have those variables accessible in code without having to manually recompile their program.</description>
+    </item>
+    <item>
+      <title>SAE Aero-Design Competition</title>
+      <link>/projects/sae2015/</link>
+      <pubDate>Mon, 25 May 2015 09:00:00 -0700</pubDate>
+      <guid>/projects/sae2015/</guid>
+      <description>The Windsor Aero Design team designed and built an aeroplane with a foldable wing allowing for a chord length of 6.7 inches with a wing span of 58 inches and a total aircraft length of 27.5 inches.  This aeroplane, when disassembled, was able to fit into a container of length 19.25 inches.</description>
+    </item>
+  </channel>
+</rss>

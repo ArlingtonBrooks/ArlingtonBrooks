@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Non-equilibrium on Brooks</title>
+    <link>/tags/non-equilibrium/</link>
+    <description>Recent content in Non-equilibrium on Brooks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Jul 2022 09:00:00 -0700</lastBuildDate>
+    <atom:link href="/tags/non-equilibrium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rarefied Gas Dynamics Conference 2022</title>
+      <link>/conferences/rgd2022/</link>
+      <pubDate>Fri, 08 Jul 2022 09:00:00 -0700</pubDate>
+      <guid>/conferences/rgd2022/</guid>
+      <description>In this study, a bi-Gaussian approximation to the number density function (NDF) is used to approximate the both the maximum-entriopy NDF and closing moment fluxes of fourth-order 14-moment maximum-entropy closure associated with fully multi-dimensional kinetic theory.</description>
+    </item>
+  </channel>
+</rss>

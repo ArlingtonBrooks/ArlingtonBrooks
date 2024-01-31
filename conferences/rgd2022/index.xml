@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rarefied Gas Dynamics Conference 2022 on Brooks</title>
+    <link>/conferences/rgd2022/</link>
+    <description>Recent content in Rarefied Gas Dynamics Conference 2022 on Brooks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Jul 2022 09:00:00 -0700</lastBuildDate>
+    <atom:link href="/conferences/rgd2022/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

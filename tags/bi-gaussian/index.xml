@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bi-Gaussian on Brooks</title>
+    <link>/tags/bi-gaussian/</link>
+    <description>Recent content in Bi-Gaussian on Brooks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Jul 2022 09:00:00 -0700</lastBuildDate>
+    <atom:link href="/tags/bi-gaussian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computational Fluid Dynamics Society of Canada Conference (2021)</title>
+      <link>/conferences/cfd2021/</link>
+      <pubDate>Fri, 29 Jul 2022 09:00:00 -0700</pubDate>
+      <guid>/conferences/cfd2021/</guid>
+      <description>In this study, two approximate high-order maximum-entropy-based closures in velocity space are coupled to a 5-moment maximum-entropy closure in droplet size space to model the behaviour of polydisperse polykinetic sprays.  The two approximations of the high-order 14-moment maximum-entropy closures in velocity space (14-moment in three space dimensions, 5-moment in one space dimension) considered here are an interpolative-based approach and a closure based on a bi-Gaussian approximation for the distribution function.</description>
+    </item>
+  </channel>
+</rss>
