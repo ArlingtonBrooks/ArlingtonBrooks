@@ -1,0 +1,549 @@
+.AboutContent {
+  display:flex;
+  align-items:center;
+}
+
+#Sidebar {
+        flex:1 0 20%;
+        /*margin-left:auto;
+        margin-right:0.5em;
+        margin-top:0.5em;
+        margin-bottom:0.5em;*/
+        width:30%;
+        padding:0.3em;
+        border:0.2em solid #112255;
+        border-radius:0.5em;
+        background-color:#c1ece3;
+}
+
+.Breakout {
+    flex:1 0;
+    /*margin:auto;*/
+    /*margin-top:0.25em;*/
+    width:70%;
+    min-width:70%;
+    justify-content:space-between;
+    display:block;
+    padding:0.2em;
+    background:#d2ecec;
+    border:0.2em solid #65beac;
+    border-radius:0.5em;
+}
+
+.Breakout figure,img,figcaption {
+    margin:auto;
+    display:block;
+    min-width:70%;
+    max-width:100%;
+    font-family:sans-serif;
+    font-weight:500;
+    border-radius:0.5em;
+}
+
+.Box {
+    margin:auto;
+    margin-top:0.25em;
+    width:80%;
+    min-width:80%;
+    justify-content:space-between;
+    display:block;
+    padding:0.2em;
+    background:#d2ecec;
+    border:0.2em solid #65beac;
+    border-radius:0.5em;
+}
+
+.Box figure,img,figcaption {
+    float:center;
+    margin:auto;
+    display:block;
+    min-width:80%;
+    max-width:100%;
+    font-family:sans-serif;
+    font-weight:500;
+    border-radius:0.5em;
+}
+
+.hidden {
+  line-height:0;
+  visibility:hidden;
+}
+
+body {
+  background-color:#d3fcff;
+  color: #222;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  /*max-width: 1001px*/
+}
+
+body a {
+  color: #5f5f9f;
+  text-decoration:underline;
+}
+
+@media only screen and (min-width:1015px) {
+
+.title {
+  float:left;
+  clear:both;
+  text-align:center;
+  color:#fff4f5;
+  position:relative;
+  top:0em;
+  font-family:cursive;
+  display:block;
+  font-size:200%;
+  line-height:1.0;
+  /*white-space:nowrap;*/
+  /*line-height:1.5em;*/
+  /*height:1.5em;*/
+  padding-left:0.5em;
+}
+
+.title::before {
+    float:left;
+    display:block;
+    margin-bottom:0.2em;
+    /*position:relative;*/
+    /*left:-3em;*/
+    width:1.3em;
+    height:1.3em;
+    background-image:url("/images/Logo.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    opacity:0.85;
+    content:"";
+    margin-right:0.1em;
+}
+
+#Logo {
+    float:left;
+    min-width:60%;
+    max-width:80%;
+    padding-left:5%;
+}
+
+.Subtext {
+  color:#d1dde0;
+  clear:left;
+  font-family:sans-serif;
+  font-style:italic;
+  font-size:90%;
+  font-weight:700;
+  text-shadow:0.05em 0.05em 0.05em #000, -0.05em -0.05em 0.05em #000;
+  display:block;
+  position:relative;
+  /*clear:both;*/
+  top:-2em;
+  margin-left:15em;
+  padding:auto;
+  opacity:90%;
+}
+
+header {
+    display:inline-block;
+    /*min-height:10em;*/
+    width:100%;
+    border-top:0.1em solid #1276B3;
+    border-bottom:0.2em solid;
+    /*Fallback*/
+    background:#90F0a0 50% 0 url("/images/Bruce.png") no-repeat;
+    background-color:#90f0a0;
+    background-image:url("/images/Grid.svg"),url("/images/Contour.svg"),url("/images/Bruce.png");
+    background-attachment:scroll,fixed,scroll;
+    background-size:4em,30em,cover;
+    background-repeat:repeat,repeat,repeat-x;
+}
+
+.navlist {
+  /*min-width:30%;
+  max-width:60%;*/
+}
+
+/* The "professional showcase" button */
+header ul {
+  clear:both;
+  margin:0.2em 0.2em 0.2em 0.2em;
+  padding:1em 0em 0em 1em;
+  display:flex;
+  flex-wrap:wrap;
+  text-align:center;
+  vertical-align:middle;
+}
+.navlist a {
+    float:none;
+    clear:none;
+    justify-content:center;
+    white-space:nowrap;
+    display:flex;
+    margin:0.2em 1.2em 0em 0.2em;
+    flex:1 0 0%;
+    width:auto;
+    min-width:auto;
+    max-width:100%;
+    font-family:Arial, sans-serif;
+    font-size:100%;
+    font-weight:600;
+    text-decoration:none;
+    color:rgba(20,20,100,0.75);
+    border:0.1em solid rgba(0,0,0,0.1);
+    border-radius:0.5em;
+    padding:0.65em 1.5em 0.5em 0.5em;
+    background-color:rgba(113,162,156,0.8);
+    transition:background-color 0.2s ease-in-out;
+}
+
+.navlist a:hover, a:focus{
+    background-color:rgba(241,244,245,0.9);
+    transition:background-color 0.2s ease-in-out;
+}
+
+.navlist a:active {
+    background-color:rgba(255,255,255,1.0);
+    transition:background-color 0.2s ease-in-out;
+}
+
+/*header a:After {
+    float:right;
+    display:block;
+    position:relative;
+    top:-0.1em;
+    left:1em;
+    width:1.5em;
+    height:1.5em;
+    content:"";
+}*/
+
+footer {
+    margin-top:0.5em;
+    margin-bottom:0em;
+    padding-bottom:1em;
+    border-bottom:0em;
+    border-top:0.2em solid #1276b3;
+    background-color:#112255;
+    background-image:url("/images/Waterfall.png");
+    background-size:cover;
+    background-repeat:repeat-x;
+    color:#26abbb;
+}
+
+a {
+  color:#8f8fdf;
+  font-weight:bold;
+  text-decoration: none;
+}
+}
+
+@media only screen and (min-width:320px) and (max-width:1015px) {
+
+.title {
+  float:left
+  text-align:center;
+  clear:both;
+  color:#fff4f5;
+  position:static;
+  top:0em;
+  font-family:cursive;
+  display:block;
+  font-size:200%;
+  line-height:1.0;
+  /*white-space:nowrap;*/
+  /*line-height:1.5em;*/
+  /*height:1.5em;*/
+  padding-left:0.5em;
+}
+
+.title::before {
+    float:left;
+    display:block;
+    margin-bottom:0.2em;
+    /*position:relative;*/
+    /*left:-3em;*/
+    width:1.3em;
+    height:1.3em;
+    background-image:url("/images/Logo.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    opacity:0.85;
+    content:"";
+    margin-right:0.1em;
+}
+
+#Logo {
+    float:left;
+    min-width:60%;
+    max-width:90%;
+    padding-left:5%;
+}
+
+.Subtext {
+  color:#d1dde0;
+  float:left;
+  font-family:sans-serif;
+  font-style:italic;
+  font-size:90%;
+  font-weight:700;
+  text-shadow:0.05em 0.05em 0.05em #000, -0.05em -0.05em 0.05em #000;
+  display:block;
+  position:relative;
+  clear:both;
+  top:-3em;
+  padding:auto;
+  opacity:90%;
+}
+
+header {
+    display:inline-block;
+    /*min-height:10em;*/
+    width:100%;
+    border-top:0.1em solid #1276B3;
+    border-bottom:0.2em solid;
+    /*Fallback*/
+    background:#90F0a0 50% 0 url("/images/Bruce.png") no-repeat;
+    background-color:#90f0a0;
+    background-image:url("/images/Grid.svg"),url("/images/Contour.svg"),url("/images/Bruce.png");
+    background-attachment:scroll,fixed,scroll;
+    background-size:4em,30em,cover;
+    background-repeat:repeat,repeat,repeat-x;
+}
+
+/* The "professional showcase" button */
+header ul {
+  clear:both;
+  margin:0.2em 0.2em 0.2em 0.2em;
+  padding:1em 0em 0em 1em;
+  display:flex;
+  flex-wrap:wrap;
+  text-align:center;
+  vertical-align:middle;
+}
+.navlist a {
+    float:none;
+    clear:none;
+    justify-content:center;
+    white-space:nowrap;
+    display:flex;
+    margin:0.2em 1.2em 0em 0.2em;
+    flex:1 0 0%;
+    width:auto;
+    min-width:auto;
+    max-width:100%;
+    font-family:Arial, sans-serif;
+    font-size:100%;
+    font-weight:600;
+    text-decoration:none;
+    color:rgba(20,20,100,0.75);
+    border:0.1em solid rgba(0,0,0,0.1);
+    border-radius:0.5em;
+    padding:0.65em 1.5em 0.5em 0.5em;
+    background-color:rgba(113,162,156,0.8);
+    transition:background-color 0.2s ease-in-out;
+}
+
+.navlist a:hover, a:focus{
+    background-color:rgba(241,244,245,0.9);
+    transition:background-color 0.2s ease-in-out;
+}
+
+.navlist a:active {
+    background-color:rgba(255,255,255,1.0);
+    transition:background-color 0.2s ease-in-out;
+}
+
+/*header a:After {
+    float:right;
+    display:block;
+    position:relative;
+    top:-0.1em;
+    left:1em;
+    width:1.5em;
+    height:1.5em;
+    content:"";
+}*/
+
+footer {
+    margin-top:0.5em;
+    margin-bottom:0em;
+    padding-bottom:1em;
+    border-bottom:0em;
+    border-top:0.2em solid #1276b3;
+    background-color:#112255;
+    background-image:url("/images/Waterfall.png");
+    background-size:cover;
+    background-repeat:repeat-x;
+    color:#26abbb;
+}
+
+a {
+  color:#8f8fdf;
+  font-weight:bold;
+  text-decoration: none;
+}
+}
+
+@media only screen and (max-width:850px) {
+header ul {
+  clear:both;
+  margin:0.2em 0.2em 0.2em 0.2em;
+  padding:1em 0em 0em 1em;
+  display:flex;
+  flex-wrap:wrap;
+  text-align:center;
+  vertical-align:middle;
+}
+.navlist a {
+    float:none;
+    clear:none;
+    justify-content:center;
+    white-space:nowrap;
+    display:flex;
+    margin:0.2em 1.2em 0em 0.2em;
+    flex:1 0 0%;
+    width:auto;
+    min-width:auto;
+    max-width:100%;
+    font-family:Arial, sans-serif;
+    font-size:100%;
+    font-weight:600;
+    text-decoration:none;
+    color:rgba(20,20,100,0.75);
+    border:0.1em solid rgba(0,0,0,0.1);
+    border-radius:0.5em;
+    padding:0.65em 1.5em 0.5em 0.5em;
+    background-color:rgba(113,162,156,0.8);
+    transition:background-color 0.2s ease-in-out;
+}
+}
+
+@media only screen and (max-width:320px) {
+
+.title {
+  float:left;
+  text-align:center;
+  clear:both;
+  color:#fff4f5;
+  position:static;
+  top:0em;
+  font-family:cursive;
+  display:block;
+  font-size:200%;
+  /*white-space:nowrap;*/
+  /*line-height:1.5em;*/
+  /*height:1.5em;*/
+  padding-left:0.5em;
+}
+
+.title::before {
+    float:left;
+    display:block;
+    /*position:relative;*/
+    /*left:-3em;*/
+    width:1.9em;
+    height:1.9em;
+    background-image:url("/images/Logo.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    opacity:0.85;
+    content:"";
+    margin-right:0.1em;
+}
+
+#Logo {
+    float:left;
+    min-width:60%;
+    max-width:90%;
+    padding-left:5%;
+}
+
+.Subtext {
+  color:#d1dde0;
+  clear:left;
+  font-family:sans-serif;
+  font-style:italic;
+  font-size:90%;
+  font-weight:700;
+  text-shadow:0.05em 0.05em 0.05em #000, -0.05em -0.05em 0.05em #000;
+  display:block;
+  position:static;
+  clear:both;
+  top:-6em;
+  padding:auto;
+  opacity:90%;
+}
+
+header {
+    display:inline-block;
+    /*min-height:10em;*/
+    width:100%;
+    border-top:0.1em solid #1276B3;
+    border-bottom:0.2em solid;
+    /*Fallback*/
+    background:#90F0a0 50% 0 url("/images/Bruce.png") no-repeat;
+    background-color:#90f0a0;
+    background-image:url("/images/Grid.svg"),url("/images/Contour.svg"),url("/images/Bruce.png");
+    background-attachment:scroll,fixed,scroll;
+    background-size:4em,30em,cover;
+    background-repeat:repeat,repeat,repeat-x;
+}
+
+/* The "professional showcase" button */
+.navlist a {
+    float:right;
+    /*clear:right;*/
+    min-width:15%;
+    max-width:20%;
+    font-family:Arial, sans-serif;
+    font-size:100%;
+    font-weight:600;
+    text-decoration:none;
+    color:rgba(20,20,100,0.75);
+    border:0.1em solid rgba(0,0,0,0.1);
+    border-radius:0.5em;
+    display:block;
+    padding:0.65em 1.5em 0.5em 0.5em;
+    background-color:rgba(113,162,156,0.8);
+    transition:background-color 0.2s ease-in-out;
+}
+
+.navlist a:hover, a:focus{
+    background-color:rgba(241,244,245,0.9);
+    transition:background-color 0.2s ease-in-out;
+}
+
+.navlist a:active {
+    background-color:rgba(255,255,255,1.0);
+    transition:background-color 0.2s ease-in-out;
+}
+
+/*header a:After {
+    float:right;
+    display:block;
+    position:relative;
+    top:-0.1em;
+    left:1em;
+    width:1.5em;
+    height:1.5em;
+    content:"";
+}*/
+
+footer {
+    margin-top:0.5em;
+    margin-bottom:0em;
+    padding-bottom:1em;
+    border-bottom:0em;
+    border-top:0.2em solid #1276b3;
+    background-color:#112255;
+    background-image:url("/images/Waterfall.png");
+    background-size:cover;
+    background-repeat:repeat-x;
+    color:#26abbb;
+}
+
+a {
+  color:#8f8fdf;
+  font-weight:bold;
+  text-decoration: none;
+}
+}
