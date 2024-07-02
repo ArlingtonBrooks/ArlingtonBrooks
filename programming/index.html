@@ -5,12 +5,67 @@
 <meta name="viewport" content="width=device-width">
 <title>Programming | Brooks</title>
 
-      <link rel="stylesheet" href="../css/main.min.eda1c4fadc284b6161c7d748aeaeaff5e7d044078101e30ac73271a1d015db52.css" integrity="sha256-7aHE&#43;twoS2Fhx9dIrq6v9efQRAeBAeMKxzJxodAV21I=" crossorigin="anonymous">
+      <link rel="stylesheet" href="../css/main.min.44b9899961bffbbba1c0b5502fcc5ddc4fd38d0efd42bb0ab635f8597613262c.css" integrity="sha256-RLmJmWG/&#43;7uhwLVQL8xd3E/TjQ79QrsKtjX4WXYTJiw=" crossorigin="anonymous">
 
 
       <script src="../js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
 
 
+  
+  <link rel="stylesheet" href="">
+  
+    <script src="../js/katex.js"></script>
+  <script>
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    var katexElements = document.getElementsByClassName('katex-render');
+
+    
+    Array.prototype.forEach.call(katexElements, function(element) {
+        
+        var texExpression = element.textContent.trim();
+
+        
+        if (!element.classList.contains('katex')) {
+            
+            element.textContent = '';
+
+            
+            katex.render(texExpression, element, {
+                throwOnError: false 
+            });
+        }
+    });
+});
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    var katexElements = document.getElementsByClassName('katex-render2');
+
+    
+    Array.prototype.forEach.call(katexElements, function(element) {
+        
+        var texExpression = element.textContent.trim();
+
+        
+        if (!element.classList.contains('katex')) {
+            
+            element.textContent = '';
+
+            
+            katex.render(texExpression, element, {
+                throwOnError: false 
+            });
+        }
+    });
+});
+
+
+
+  </script>
 </head>
 <body>
   <header>

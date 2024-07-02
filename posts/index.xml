@@ -4,8 +4,16 @@
     <title>Posts on Brooks</title>
     <link>/posts/</link>
     <description>Recent content in Posts on Brooks</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jul 2024 20:13:06 -0400</lastBuildDate>
     <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Load Balancing</title>
+      <link>/posts/loadbalancing/</link>
+      <pubDate>Mon, 01 Jul 2024 20:13:06 -0400</pubDate>
+      <guid>/posts/loadbalancing/</guid>
+      <description>Load Balancing for Heterogeneous CFD Simulations Efficiency can be measured in many ways, and is commonly measured by Central Processing Unit (CPU) time or wall time. A metric which can also indicate efficiency can be defined as follows: the amount of computational time spent advancing the solution compared to the total amount of time spent for a given computational step; this will be referred to hereafter as the CPU Active Ratio (CAR).</description>
+    </item>
   </channel>
 </rss>

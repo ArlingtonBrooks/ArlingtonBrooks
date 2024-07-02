@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Load Balancing | Brooks</title>
+
+      <link rel="stylesheet" href="../../css/main.min.44b9899961bffbbba1c0b5502fcc5ddc4fd38d0efd42bb0ab635f8597613262c.css" integrity="sha256-RLmJmWG/&#43;7uhwLVQL8xd3E/TjQ79QrsKtjX4WXYTJiw=" crossorigin="anonymous">
+
+
+      <script src="../../js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+  
+  <link rel="stylesheet" href="">
+  
+    <script src="../../js/katex.js"></script>
+  <script>
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    var katexElements = document.getElementsByClassName('katex-render');
+
+    
+    Array.prototype.forEach.call(katexElements, function(element) {
+        
+        var texExpression = element.textContent.trim();
+
+        
+        if (!element.classList.contains('katex')) {
+            
+            element.textContent = '';
+
+            
+            katex.render(texExpression, element, {
+                throwOnError: false 
+            });
+        }
+    });
+});
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    var katexElements = document.getElementsByClassName('katex-render2');
+
+    
+    Array.prototype.forEach.call(katexElements, function(element) {
+        
+        var texExpression = element.textContent.trim();
+
+        
+        if (!element.classList.contains('katex')) {
+            
+            element.textContent = '';
+
+            
+            katex.render(texExpression, element, {
+                throwOnError: false 
+            });
+        }
+    });
+});
+
+
+
+  </script>
+</head>
+<body>
+  <header>
+    <div id="Logo">
+    <div>
+    <h1><a href="../../" class="title">Brooks</a></h1>
+    </div>
+    <div>
+    <h2 class="Subtext">Beyond conventional thinking</h2>
+    </div>
+</div>
+<div class="navlist">
+
+  <nav>
+    <ul>
+
+      <a href="../../">Home</a>
+
+      <a href="../../about/">About Me</a>
+
+      <a href="../../programming/">Programming</a>
+
+      <a href="../../projects/">Projects</a>
+
+      <a aria-current="true" class="ancestor" href="../../posts/">Blog</a>
+
+      <a href="../../conferences/">Conferences</a>
+
+      <a href="../../tags/">Tags</a>
+    </ul>
+  </nav>
+
+</div>
+
+  </header>
+  <main>
+    
+  <h1>Load Balancing</h1>
+
+  
+  
+  <time datetime="2024-07-01T20:13:06-04:00">July 1, 2024</time>
+  <section class="Box">
+  <h1 id="load-balancing-for-heterogeneous-cfd-simulations">Load Balancing for Heterogeneous CFD Simulations</h1>
+<p>Efficiency can be measured in many ways,
+and is commonly measured by Central Processing Unit (CPU) time or wall time. A metric
+which can also indicate efficiency can be defined as follows: the amount of computational time spent advancing the solution compared to the total amount of time spent for a given computational step; this will be referred to hereafter
+as the CPU Active Ratio (CAR). CAR can be computed simply as
+
+
+<div class="katex-render">
+\text{CAR} = \frac{t_{\text{Active}}}{t_\text{Total}}
+</div>
+
+
+The CAR ratio represents how much of the available computational power is being used to
+advance the problem, thus defining the efficient utilization of all available resources.
+Because not all computational resources can be made parallel, there is an upper limit to the CAR.
+See also: <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl&rsquo;s Law</a>.</p>
+<p>For standard CFD codes which make use of the Euler and Navier Stokes equations, the
+time required to advance one time step of the solution is relatively consistent across all
+computational cells. Apart from MPI (or other multithreading) overhead, the CAR is expected to be quite high.
+For more complicated methods whereby the time to compute the data in a computational cell is variable, the time required to advance one time step of
+the solution may vary significantly between different computational cells. If some regions can be solved quickly while others are slow to get a result,
+the computational time can be overrepresented as a result of a few expensive computational cells hogging the CPU time. Such a case has been observed in my studies and results in a CAR that can be as low as
+0.5 (indicating half of the computational resource is being wasted).</p>
+<p>Many multidimensional codes to break the solution problem into blocks which are assigned to different CPUs. The easy way of
+assigning these blocks is to simply assign an equal number of blocks to each CPU. While the
+CAR ratio can be kept high for many cases, instances where some cells might take a long
+time to compute can cause the simulation to stall.</p>
+<p>A solution to this problem proposed here involves a simple load balancing scheme based on the classical Round Robin load balancing method.
+Load balancing has been a topic of research for many years; some previously explored methods include the use of hybrid parallelization techniques using both a Message Passing Interface (MPI) with the OpenMP multiprocessing API [<a href="https://superfri.susu.ru/index.php/superfri/article/view/391">1</a>], and the use of an optimization algorithm which runs after each time step to move blocks of computational cells between MPI processes [<a href="https://www.gacm2017.uni-stuttgart.de/registration/Upload/ExtendedAbstracts/ExtendedAbstract_0165.pdf">2</a>].
+There was recently a publication by Micale, Bracconi, and Maestri [<a href="https://pubs.acs.org/doi/full/10.1021/acsengineeringau.3c00066">3</a>] which employs a method similar to the one which will be presented here, however the method presented here was developed independently prior to the authors&rsquo; publication (this is confirmed by my Github comits to a private repo).</p>
+<h2 id="the-round-robin">The Round Robin</h2>
+<p>The method proposed herein requires that the program keep track of the computational time expended per process; therefore, the time from the start of a simulation step to the end must be computed without the interference of blocking MPI commands.
+The computational time expended for just the calculations is related to the number of calculations the CPU has to do on the block.
+For a homogeneous computing environment, no scaling is needed; however, for a heterogeneous system whereby one CPU does not equal the performance of another CPU, it is recommended that some scaling criterion be established (for example, one might use the amount of time to compute pi to 50 decimal places as a benchmark scaling metric for floating point operations); a more effective strategy would be to define a standard computational block and run it on each compute device to get an idea of the performance for a problem which is more true-to-life.</p>
+<p>The average compute time of all computational blocks shall be referred to as 
+ <span class="katex-render2"> t_b </span> 
+.  Note that the average should be corrected for the scaling factor for heterogeneous compute environments.
+The final step of this process is to assign computational blocks to each process until the computational time on that process is equal to at least the mean compute time;
+this is repeated for all computational cells.
+A critical assumption made here is that the computational time required for timestep 
+ <span class="katex-render2"> T_i </span> 
+ is similar to the computational time required for timestep 
+ <span class="katex-render2"> T_{i+1} </span> 
+.</p>
+<p>The reason a more complicated time approximation for 
+ <span class="katex-render2"> T_{i+1} </span> 
+ is not implemented is because the load balancing operation should be extremely lightweight so as not to negate its own existence; any additional calculations add overhead which could reduce the effectiveness of load balancing.
+It would theoretically be possible to store the time 
+ <span class="katex-render2"> T_{i-1} </span> 
+ and compute a linear approximation of 
+ <span class="katex-render2"> T_{i+1} </span> 
+ relatively cheaply.
+For now, I have not explored this technique as I do not believe it will yield enough of a performance gain for the added complexity.</p>
+<p>The described approach was tested using the known computational times from a complex CFD code from my Master&rsquo;s thesis.
+In this case, load balancing was done on a cell-by-cell basis rather than block-based since the one-dimensional code does not split the domain into blocks.
+Figure 1 shows a plot of time with an overlay of the load balancing for a specific time step.
+<div class="Box">
+
+<img src="LoadBalance.png" alt="Load balanced solution text">
+<b>Figure 1</b>: An example of a load-balanced simulation result.
+
+</div>
+</p>
+<p>If we compute the time for each cell grouping assuming an even distribution across all CPUs, the longest cell takes 132ms to compute the result.
+Compare this to the load-balanced method which achieves the same in just 53ms; this represents a more than 50% reduction in compute time.</p>
+<p>In practice, performance is not equal to the ideal result; this is because there is overhead in moving cells from one CPU to another, there is overhead in calculating the average cell time, and from one time step to the next the computational time may change suddenly.
+The first two of these problems can be addressed directly by simply reducing the frequency of re-balancing.
+It is important to be mindful of <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl&rsquo;s Law</a>; the theoretical 50% reduction in compute time is an ideal which may not be attainable without considerable tuning.
+The proposed load balancing algorithm is just an extra data shift tagged on to the end of the normal finite volume solution step.</p>
+<h2 id="result-from-cell-based-balancing">Result from cell-based balancing</h2>
+<p>If applied at each computational step, this procedure ends up increasing computational time.
+If, instead, only applied every 100 time steps, this solution produces a computational speed-up of 30% for this case.
+It is clear that triggering too frequently can cause the performance of this load balancing scheme to cause problems; it is also likely that triggering too infrequently may negate any positive effects or even hinder the simulation by not updating regions where a computationally intensive entity is no longer present.
+There is also the possibility of timing noise; a computational cell may not take exactly 800ns every single time, so cells on the boundary may end up being frequently swapped between processes.</p>
+<p>For block-based solutions, it may be possible to track the L2-norm of the solution and trigger load re-balancing only when the solution norm is changing beyond some baseline on multiple CPUs.
+Further research may reveal better criterion for triggering a load re-balance.
+A further issue remains: if we use this approach, we risk undersubscribing the last CPU because each assignment to a CPU node subscribes to at least the mean compute time.
+This issue could be alleviated by over- and under-subscribing CPU nodes alternately, however as of this time I have not looked in to this.
+Another alternative would be to keep track of the &ldquo;total time&rdquo; metric and adjust the balancing on-the-fly if it appears that the final node will be under-subscribed.
+Again, I haven&rsquo;t done this as I want to keep the load-balancing algorithm as simple as possible.</p>
+<h2 id="block-based-approaches">Block-Based Approaches</h2>
+<p>The solution for the cell-based procedure was for a quasi-2D simulation with 500 computational cells.
+The solution was first order, meaning only one piece of information was being shared between any given CPUs.
+If a multidimensional block-based approach were to be specified, an additional latency penalty would have to be accounted for due to the requirement of sending information from ghost cells in adjascent CPUs.</p>
+<p>A major source of performance loss is data transfer.
+On a single CPU, data transfer can be relatively efficient, however data transfer over a network (regardless of the technology) is inherently slow.
+The slowdown is worse if considering offloading data to a GPU.
+It is therefore expected that multidimensional codes will require even less frequent load balancing calls to avoid the increased time waste inherent in data transfers.</p>
+<p>I have not yet applied this to a multidimensional block-based approach to determine how bad the additional latency will be.
+This work is planned, but I will first need access to a well-written code to which I can add this algorithm.</p>
+<h2 id="load-balancing-for-heterogeneous-systems">Load Balancing for Heterogeneous Systems</h2>
+<p>One final note is the load balancing of a non-uniform workload across a non-uniform compute architecture.
+The use of GPU acceleration for CFD is not exactly new; many codes use CUDA, SYCL, or similar methods to offload highly parallel computations to streaming multiprocessors.
+I have considered the possibility balancing a load between these devices; of particular interest is: if we have a high performance CPU node paired with multiple high-performance GPUs, how do we split the load?  More importantly, what if those GPUs are not matched in performance; can we split the load effectively between them?</p>
+<p>I have written a sample load-balancing program which attempts to do exactly this.
+Once again, I do not have a test code to play around with; instead, I have written a simple C++ simulation which attempts to &ldquo;guestimate&rdquo; what the approximate performance savings will be and what the block distribution will look like.
+Be forewarned: I wrote this in an afternoon while attending a child&rsquo;s birthday party.
+The code can be found <a href="https://github.com/ArlingtonBrooks/BrooksBalance">here</a>.</p>
+<h2 id="final-comments">Final Comments</h2>
+<p>I have a system which appears to perform quite well.
+Some researchers have subsequently discovered similar systems, which I feel validates the work I put into this.
+It will be interesting to see what developments are made going forward.</p>
+<p>I have prepared this result for presentation with my latest meeting with my Ph. D. comittee; regretably, nobody seemed curious to ask about it.
+I rather enjoy talking about the load balancing problem (as my unfortunate colleagues can attest when I get on a roll).
+I will update this page if I present these findings at any conference; otherwise, feel free to reference this website and my Master&rsquo;s thesis.</p>
+
+  </section>
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2024. All rights reserved.</p>
+<p> The CSS stylesheet used by this website is my own creation after completing a course audit of CSS basics on <a href=edx.org>edx.org</a>.  I encourage you to use elements you like on your own webpages, and as always, give credit where due.
+
+  </footer>
+</body>
+</html>
